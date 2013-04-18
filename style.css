@@ -1,0 +1,208 @@
+body{
+	font-family: Helvetica, Arial, sans-serif;
+	background: url('dark_wood.png');
+	text-shadow: 1px 1px white;
+}
+
+#container{
+	background: url('paper.png');
+	width: 700px;
+	margin: 30px auto;
+	padding: 20px 40px 40px;
+	-webkit-box-shadow:  5px 5px 10px 2px rgba(0, 0, 0, 0.7);
+    box-shadow:  5px 5px 10px 2px rgba(0, 0, 0, 0.7);
+}
+
+#todo-input{
+	height: 40px;
+	width: 680px;
+	border: solid 1px #ccc;
+	padding: 5px 10px;
+	font-size: 20px;
+	font-weight: lighter;
+	margin-bottom: 10px;
+}
+
+h1{
+	font-size: 36px;
+	color: #990000;
+}
+
+h1 .mobile{
+	font-size: 32px;
+	color: #999;
+	font-weight: lighter;
+	padding-left: 15px;
+	display: none;
+}
+
+#add-btn{
+	width: 680px;
+	border: solid 1px #bbb;
+	margin-bottom: 50px;
+	padding: 12px 10px;
+	background-color: rgba(0,0,0,0.4);
+	color: #fff;
+	font-size: 22px;
+	text-align: center;
+	display: none;
+	text-shadow: none;
+}
+
+#add-btn:hover{
+	background-color: rgba(0,0,0,0.5);
+	cursor: pointer;
+}
+
+.item{
+	height: 30px;
+	width: 680px;
+	margin-top: 20px;
+	background-color: rgba(0,0,0,0.15);
+	font-size: 22px;
+	margin-bottom: 10px;
+	padding: 15px 0px 15px 15px;
+	-webkit-animation: hide 0.5s; 
+	overflow: hidden;
+}
+
+
+.item.show{
+	-webkit-animation: show 0.5s; 
+}
+
+.item .text{
+	float: left;
+	padding: 15px;
+	width: 600px;
+	height: 30px;
+	overflow: hidden;
+}
+
+.item .delete{
+	float: right;
+	color: #666;
+	padding: 5px;
+	margin-right: 10px;
+	font-size: 18px;
+	height: 0px;
+}
+
+.item.show .delete{
+	height: 28px;
+}
+
+.item .delete:hover{
+	cursor: pointer;
+	color: #333;
+}
+
+@-webkit-keyframes show
+{
+	0%   {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+	100% {
+		opacity: 1;
+		width: 680px;
+		height: 30px;
+	}
+}
+
+@-webkit-keyframes hide
+{
+	0%   {
+		opacity: 1;
+		width: 680px;
+		height: 30px;
+	}
+	100% {
+		opacity: 0;
+		width: 0px;
+		height: 0px;
+	}
+}
+
+
+
+@media only screen and (max-width : 480px) {
+	body{
+		background: url('paper.png');
+	}
+	#container{
+		width: 290px;
+		padding: 10px;
+		margin-top: -20px;
+		-webkit-box-shadow: none;
+   		box-shadow: none;
+   		background: none;
+	}
+
+	h1 .mobile{
+		display: inline;
+	}
+
+	#todo-input{
+		width: 260px;
+	}
+
+	#add-btn{
+		display: block;
+		width: 260px;
+	}
+
+	.item{
+		width: 260px;
+		-webkit-animation: hide-mobile 0.5s; 
+	}
+
+	.item .text{
+		width: 200px;
+	}
+
+	.item.show{
+		-webkit-animation: show-mobile 0.5s; 
+	}
+
+	.item .delete{
+		font-size: 24px;
+		padding: 16px 18px;
+		margin-right: 0px;
+		background-color: rgba(0,0,0,0.1);
+		position: relative;
+		top: -15px;
+	}
+	.item .delete:hover{
+		background-color: rgba(0,0,0,0.2);
+	}
+
+	@-webkit-keyframes show-mobile
+	{
+		0%   {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+		100% {
+			opacity: 1;
+			width: 260px;
+			height: 30px;
+		}
+	}
+
+	@-webkit-keyframes hide-mobile
+	{
+		0%   {
+			opacity: 1;
+			width: 260px;
+			height: 30px;
+		}
+		100% {
+			opacity: 0;
+			width: 0px;
+			height: 0px;
+		}
+	}
+}
